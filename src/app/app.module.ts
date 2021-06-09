@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
-import { UsersComponent } from './users/users.component';
 import { UserService } from './user.service';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, UsersComponent ],
+  declarations: [ AppComponent, HelloComponent, UserDetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [UserService]
 })
