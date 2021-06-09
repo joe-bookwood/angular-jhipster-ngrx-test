@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { loadUsers } from '../user/store/user.actions';
 
 @Component({
   selector: 'app-user-detail',
@@ -9,14 +12,14 @@ export class UserDetailComponent implements OnInit {
 
   public userId: number;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
     this.userId = 1;
   }
 
-  sendLoadAction():void{
-
+  sendLoadAction(payload: number):void{
+    this.store.dispatch(loadUsers({payload}));
   }
 
 }

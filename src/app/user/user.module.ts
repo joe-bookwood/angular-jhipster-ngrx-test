@@ -5,8 +5,6 @@ import * as fromUser from './store/user.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './store/user.effects';
 
-
-
 @NgModule({
   declarations: [],
   imports: [
@@ -15,4 +13,4 @@ import { UserEffects } from './store/user.effects';
     EffectsModule.forFeature([UserEffects])
   ]
 })
-export class UserModule { }
+export class UserModule {}
