@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailComponent implements OnInit {
 
+  public userId: number;
+
   constructor() { }
 
   ngOnInit() {
+    this.userId = 1;
+  }
+
+  sendLoadAction():void{
+
   }
 
 }

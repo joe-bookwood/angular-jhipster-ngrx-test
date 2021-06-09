@@ -8,9 +8,9 @@ import { UserService } from './user.service';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ],
-  declarations: [ AppComponent, HelloComponent, UserDetailComponent ],
-  bootstrap:    [ AppComponent ],
+  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent, HelloComponent, UserDetailComponent],
+  bootstrap: [AppComponent],
   providers: [UserService]
 })
-export class AppModule { }
+export class AppModule {}
