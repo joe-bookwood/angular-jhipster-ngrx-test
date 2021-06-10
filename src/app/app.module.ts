@@ -6,9 +6,28 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { UserService } from './user.service';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot(
+      {},
+      {
+        runtimeChecks: {
+          strictActionImmutability: true,
+          strictActionSerializability: true,
+          strictStateImmutability: true,
+          strictStateSerializability: true
+        }
+      }
+    ),
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([]),
+    FormsModule
+  ],
   declarations: [AppComponent, HelloComponent, UserDetailComponent],
   bootstrap: [AppComponent],
   providers: [UserService]
