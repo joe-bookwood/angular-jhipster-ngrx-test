@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { IUser } from '../../model/user.model';
-import * as UserActions from './user.actions';
+import { loadUsers, userIsLoaded } from './user.actions';
 
 export const userFeatureKey = 'user';
 
@@ -16,7 +16,10 @@ export const initialState: State = {
 export const reducer = createReducer(
   initialState,
 
-  on(UserActions.loadUsers, state => state),
+  on(userIsLoaded, (state, {payload}) => ({
+    ...state,
+    user: payload
+  }))
 
 );
 
