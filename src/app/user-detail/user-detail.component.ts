@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { loadUsers } from '../user/store/user.actions';
+import { loadUser } from '../user/store/user.actions';
 
 @Component({
   selector: 'app-user-detail',
@@ -19,7 +19,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   sendLoadAction(payload: number):void{
-    this.store.dispatch(loadUsers({payload}));
+    this.store.dispatch(loadUser({payload}));
   }
 
 }
