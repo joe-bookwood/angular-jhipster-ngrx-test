@@ -1,6 +1,6 @@
 # Jhipster ngrx poc
 This project ist my first try to add ngrx to a JHipster project.
-I try to use the generated service funktions. I copied the model and other things from a generated JHipster project. To make things easier, I rebuid the user entity from the (Jsonplaceholder Project)[https://jsonplaceholder.typicode.com] project. I generated a simple jdl file and renamed the user to UserDetail, because user is a reserved word in JHipster. In the Stackblitz project I renamed it back to user. 
+I try to use the generated service functions. I copied the model and other things from a generated JHipster project. To make things easier, I rebuid the user entity from the (Jsonplaceholder Project)[https://jsonplaceholder.typicode.com] project. I generated a simple jdl file and renamed the user to UserDetail, because user is a reserved word in JHipster. In the Stackblitz project I renamed it back to user. 
 
 ## angular-jhipster-ngrx-test
 
