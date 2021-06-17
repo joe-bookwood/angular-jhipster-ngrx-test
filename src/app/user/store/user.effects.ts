@@ -17,12 +17,15 @@ export class UserEffects {
 
   loadUsers$ = createEffect(() => {
     return this.actions$.pipe( 
-
       ofType(loadUser),
       concatMap(({payload}) => {
         return this.userService.find(payload).pipe(
-          map((resp: HttpResponse<IUser>) => 
-          userIsLoaded{payload: resp.body??undefined})
-        )}))}
+          map((resp: HttpResponse<IUser>) => {
+            let receivedUser: IUser = resp.body??undefined;
+            return userIsLoaded({payload: { user: receivedUser } })
+          })
+        )
+      })  
     )
+  })
 }
