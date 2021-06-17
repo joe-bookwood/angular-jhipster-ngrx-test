@@ -18,7 +18,7 @@ export const reducer = createReducer(
 
   on(userIsLoaded, (state, {payload}) => ({
     ...state,
-    user: payload
+    user: payload.user
   }))
 
 );

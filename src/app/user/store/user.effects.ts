@@ -12,9 +12,6 @@ import { IUser } from '../../model/user.model';
 @Injectable()
 export class UserEffects {
 
-  constructor(private actions$: Actions, private userService: UserService) {}
-
-
   loadUsers$ = createEffect(() => {
     return this.actions$.pipe( 
       ofType(loadUser),
@@ -28,4 +25,7 @@ export class UserEffects {
       })  
     )
   })
+
+  constructor(private actions$: Actions, private userService: UserService) {}
+
 }

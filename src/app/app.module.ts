@@ -9,6 +9,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { UserModule } from './user/user.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -26,6 +28,8 @@ import { EffectsModule } from '@ngrx/effects';
     ),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
+    HttpClientModule,
+    UserModule,
     FormsModule
   ],
   declarations: [AppComponent, HelloComponent, UserDetailComponent],

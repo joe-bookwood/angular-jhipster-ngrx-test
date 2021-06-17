@@ -19,6 +19,7 @@ export class UserDetailComponent implements OnInit {
   }
 
   sendLoadAction(payload: number):void{
+    console.log('id=',payload);
     this.store.dispatch(loadUser({payload}));
   }
 
