@@ -1,0 +1,55 @@
+
+application {
+  config {
+    baseName jsonPlaceholderGw,
+    applicationType gateway,
+    packageName de.bitc,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+    clientFramework angular
+  }
+  entities *
+}
+
+application {
+  config {
+    baseName jsonPlaceHolder,
+    applicationType microservice,
+    packageName de.bitc,
+    authenticationType jwt,
+    prodDatabaseType postgresql,
+  }
+  entities *
+}
+
+entity UserA {
+  name String
+  username String
+  email String
+  phone String
+  website String
+}
+
+entity Address {
+  street String
+  suite String
+  city String
+  zipcode String
+}
+
+entity Geo {
+  lat String
+  lng String
+}
+
+entity Company {
+  name String
+  catchPhrase String
+  bs String
+}
+
+relationship OneToOne {
+    UserA{company} to Company
+    UserA{address} to Address
+    Address{geo} to Geo
+}

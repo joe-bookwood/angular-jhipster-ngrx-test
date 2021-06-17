@@ -1,0 +1,8 @@
+<div class="form-control">
+  <label for="user-id-field">User ID: </label>
+  <input id="user-id-field"
+  type="number"
+  [(ngModel)]="userId"
+  />
+  <button (click)="sendLoadAction(userId)">Load</button>
+</div>
