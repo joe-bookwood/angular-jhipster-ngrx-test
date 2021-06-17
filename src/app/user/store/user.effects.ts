@@ -1,33 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 
-import { concatMap, switchMap } from 'rxjs/operators';
+import { concatMap, map, switchMap } from 'rxjs/operators';
 import { Observable, EMPTY } from 'rxjs';
 
-import * as UserActions from './user.actions';
-import { UserService } from '../../user.service';
-
+import {  UserService } from '../../user.service';
+import { HttpResponse } from '@angular/common/http';
+import { loadUser, userIsLoaded } from './user.actions';
+import { IUser } from '../../model/user.model';
 
 @Injectable()
 export class UserEffects {
- 
+
   constructor(private actions$: Actions, private userService: UserService) {}
 
 
   loadUsers$ = createEffect(() => {
     return this.actions$.pipe( 
 
-      ofType(UserActions.loadUser),
-      /** An EMPTY observable only emits completion. Replace with your own observable API request */
-      switchMap(({payload}) => {
+      ofType(loadUser),
+      concatMap(({payload}) => {
         return this.userService.find(payload).pipe(
-          switchMap((response) => {
-            const { data } 
-          })
-        )
-}  
-}
-
-
-
+          map((resp: HttpResponse<IUser>) => 
+          userIsLoaded{payload: resp.body??undefined})
+        )}))}
+    )
 }
