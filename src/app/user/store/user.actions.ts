@@ -8,5 +8,5 @@ export const loadUser = createAction(
 
 export const userIsLoaded = createAction(
   '[User] User is loaded',
-  props<{ payload: IUser }>()
+   props<{ payload: { user: IUser } }>()
 );
