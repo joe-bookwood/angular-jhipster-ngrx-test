@@ -1,8 +1,9 @@
 <div class="form-control">
   <label for="user-id-field">User ID: </label>
-  <input id="user-id-field"
-  type="number"
-  [(ngModel)]="userId"
-  />
-  <button (click)="sendLoadAction(userId)">Load</button>
+  <input id="user-id-field" type="number" [(ngModel)]="userId" />
+  <button (click)="sendLoadAction(userId)">Fire Load Action</button>
+</div>
+<div *ngIf="user$ | async as loadedUser">
+  <h3>{{ loadedUser.name }}</h3>
+  <pre>{{ loadedUser | json }}</pre>
 </div>

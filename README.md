@@ -16,4 +16,4 @@ I generated the jhpster project with:
     npm install @ngrx/{store,effects,entity,store-devtools,schematics}
     ng generate @ngrx/schematics:feature user/store/user --module user/user.module.ts
 
-I copied the user folder to a **StackBlitz ⚡️** project and edid the rest by hand. I try to use this project for all questions as a playground.
+I copied the user folder to a **StackBlitz ⚡️** project and edit the rest by hand. I try to use this project for all questions as a playground.
