@@ -9,6 +9,7 @@ import { userSelector } from '../user/store/user.selectors';
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css'],
+  standalone: true,
 })
 export class UserDetailComponent implements OnInit {
   public userId: number;
